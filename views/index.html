@@ -20,15 +20,16 @@
             <div class="tracks"></div>
         </aside>
         <audio id="music" style="width: 100%">
-          <source src="../assets/src/Celldweller - End of an Empire.mp3">
+          <source>
         </audio>
         <div id="audio_player">
-            <button id='btnPrev' class='prev' title='previous' onclick=''>previous</button>
-            <button id='btnPlayPause' class='play' title='play' onclick='playPause()'>play</button>
-            <button id='btnNext' class='next' title='next' onclick=''>next</button>
-            <progress id='progress-bar' min='0' max='100' value='0'></progress>
-            <button id='btnMute' class='mute' title='mute' onclick='muteVolume();'>mute</button>
-            <input type="range" id="volume-bar" title="volume" min="0" max="10" step="1" value="10">
+            <button id="btnLoad" class="load" title="load" onclick="load()">load album</button>
+            <button id="btnPrev" class="prev" title="previous" onclick="previous()">previous</button>
+            <button id="btnPlayPause" class="play" title="play" onclick="playPause()">play</button>
+            <button id="btnNext" class="next" title="next" onclick="next()">next</button>
+            <progress id="progressBar" min="0" max="100" value="0"></progress>
+            <button id="btnMute" class="mute" title="mute" onclick="muteVolume();">mute</button>
+            <input type="range" id="volumeBar" title="volume" min="0" max="10" step="1" value="10">
         </div>
     </main>
     <script src="../assets/js/index.js"></script>
