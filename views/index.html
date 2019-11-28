@@ -34,12 +34,14 @@
         <audio id="music" style="width: 100%">
           <source>
         </audio>
-        <div id="audio_player">
+        <div id="audioPlayer">
             <button id="btnLoad" class="load" title="load" onclick="load()">load album</button>
             <button id="btnPrev" class="prev" title="previous" onclick="previous()">previous</button>
             <button id="btnPlayPause" class="play" title="play" onclick="playPause()">play</button>
             <button id="btnNext" class="next" title="next" onclick="next()">next</button>
+            <span id="rTime"></span>
             <progress id="progressBar" min="0" max="100" value="0"></progress>
+            <span id="tTime"></span>
             <button id="btnMute" class="mute" title="mute" onclick="muteVolume();">mute</button>
             <input type="range" id="volumeBar" title="volume" min="0" max="10" step="1" value="10">
         </div>
