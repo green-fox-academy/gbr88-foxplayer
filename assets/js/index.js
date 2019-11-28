@@ -21,7 +21,11 @@ volumeBar.addEventListener("change", function(evt) {
     player.volume = parseInt(evt.target.value) / 10;
 });
 
-player.addEventListener('timeupdate', updateProgressBar);
+player.addEventListener('timeupdate', function() {
+    if (player.currentTime > 0) {
+        updateProgressBar();
+    }
+});
 progressBar.addEventListener('click', seek);
 
 function load() {
@@ -37,7 +41,10 @@ function next() {
         progressBar.value = 0;
         source[0].src = tracks[currentTrack].src;
         player.load();
-        player.play();
+        if (player.paused || player.ended) {
+            changeButtonType(btnPlayPause, 'pause');
+            player.play();
+        }
     }
 }
 
@@ -47,7 +54,10 @@ function previous() {
         progressBar.value = 0;
         source[0].src = tracks[currentTrack].src;
         player.load();
-        player.play();
+        if (player.paused || player.ended) {
+            changeButtonType(btnPlayPause, 'pause');
+            player.play();
+        }
     }
 }
 
