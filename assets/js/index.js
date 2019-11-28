@@ -24,10 +24,6 @@ volumeBar.addEventListener('change', function(evt) {
     player.volume = parseInt(evt.target.value) / 10;
 });
 
-audioPlayer.addEventListener('click', function() {
-
-})
-
 player.addEventListener('timeupdate', function() {
     let rTime = parseInt(player.duration - player.currentTime);
     let tTime = parseInt(player.duration);
@@ -45,7 +41,6 @@ function load() {
     progressBar.value = 0;
     source[0].src = tracks[currentTrack].src;
     player.load();
-
 }
 
 function next() {
@@ -116,10 +111,10 @@ function changeButtonType(btn, value) {
 }
 
 function seconds2time(seconds) {
-    var hours = Math.floor(seconds / 3600);
-    var minutes = Math.floor((seconds - (hours * 3600)) / 60);
-    var seconds = seconds - (hours * 3600) - (minutes * 60);
-    var time = "";
+    let hours = Math.floor(seconds / 3600);
+    let minutes = Math.floor((seconds - (hours * 3600)) / 60);
+    let seconds = seconds - (hours * 3600) - (minutes * 60);
+    let time = "";
 
     if (hours != 0) {
         time = hours + ":";
